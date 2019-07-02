@@ -20,32 +20,34 @@ function load()
     var id = 0;
     for (var i = 0; i<9;i++)
     {
+        document.getElementById("tabelka").innerHTML += '<div class="row"></div>';
         var wiersz = i+1;
         var start = liczba;
         for (var j = 0;j<9;j++)
         {
+            
             id++;
             var kolumna = j+1;
             if(kolumna==3 || kolumna==6)
             {
                 if(wiersz==3 || wiersz==6)
                 {
-                    document.getElementById("tabelka").innerHTML += '<div id="'+id+'" class="okno brd-right brd-down" ></div>';
+                    document.getElementsByClassName("row")[i].innerHTML += '<div id="'+id+'" class="okno brd-right brd-down" ></div>';
                 }
                 else
                 {
-                    document.getElementById("tabelka").innerHTML += '<div id="'+id+'" class="okno brd-right" ></div>';
+                    document.getElementsByClassName("row")[i].innerHTML += '<div id="'+id+'" class="okno brd-right" ></div>';
                 }
             }
             else
             {
                 if(wiersz==3 || wiersz==6)
                 {
-                    document.getElementById("tabelka").innerHTML += '<div id="'+id+'" class="okno brd-down" ></div>';
+                    document.getElementsByClassName("row")[i].innerHTML += '<div id="'+id+'" class="okno brd-down" ></div>';
                 }
                 else
                 {
-                    document.getElementById("tabelka").innerHTML += '<div id="'+id+'" class="okno" ></div>';
+                    document.getElementsByClassName("row")[i].innerHTML += '<div id="'+id+'" class="okno" ></div>';
                 }
             }
             if(j==2 || j==5){liczba++}
